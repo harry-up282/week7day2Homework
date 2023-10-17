@@ -6,6 +6,11 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
     />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
     <!-- Meta Tags -->
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -71,7 +76,8 @@
             </ul>
           </nav>
         </div> -->
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <!-- <nav class="navbar navbar-expand-lg navbar-light bg-light"> -->
+          <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
           <div class="container">
             <a class="navbar-brand" href="index.html">
               <img src="images/logo.png" alt="Great Cliffs Logo" width="125">
@@ -114,7 +120,12 @@
         </p>
         <br />
 
-        <table align="center">
+        <div class="table-responsive">
+          <table class="table table-bordered" align="center">
+            
+       
+
+        <!-- <table align="center"> -->
           <caption>
             Activities at the cliffs
           </caption>
@@ -129,42 +140,62 @@
           </thead>
           <tbody>
             <tr>
-              <td>Hiking</td>
-              <td>College hikes</td>
-              <td>Family Fun</td>
-              <td>Treasure trails</td>
-              <td>Canyon Explorer</td>
+              <td class="table-cell" data-content="Hiking">Hiking</td>
+              <td class="table-cell" data-content="College hikes">College hikes</td>
+              <td class="table-cell" data-content="Family Fun">Family Fun</td>
+              <td class="table-cell" data-content="Treasure trails">Treasure trails</td>
+              <td class="table-cell" data-content="Canyon Explore">Canyon Explorer</td>
             </tr>
             <tr>
-              <td>Kayak</td>
-              <td>Western kayak Meetup</td>
+              <td class="table-cell" data-content="Kayak">Kayak</td>
+              <td class="table-cell" data-content="Western Kayak Meetup">Western kayak Meetup</td>
               <td>Not Availaible</td>
-              <td>Youth Kayaking</td>
-              <td>Kayak Down</td>
+              <td class="table-cell" data-content="Youth Kayaking">Youth Kayaking</td>
+              <td class="table-cell" data-content="Kayak Down">Kayak Down</td>
             </tr>
             <tr>
-              <td>Sky Diving</td>
-              <td>Seacliff Diving</td>
-              <td>Sky is a limit</td>
+              <td class="table-cell" data-content="Sky Diving">Sky Diving</td>
+              <td class="table-cell" data-content="Seacliff Diving">Seacliff Diving</td>
+              <td class="table-cell" data-content="Sky is a limit">Sky is a limit</td>
               <td>Not Availaible</td>
-              <td>Sky diving for Beginners</td>
+              <td class="table-cell" data-content="Sky diving for beginner's">Sky diving for Beginners</td>
             </tr>
             <tr>
-              <td>Biking</td>
-              <td>Bicycle for one</td>
+              <td class="table-cell" data-content="Biking">Biking</td>
+              <td class="table-cell" data-content="Bicycle for one">Bicycle for one</td>
               <td>Not Avalaible</td>
-              <td>Bike meet up Group</td>
+              <td class="table-cell" data-content="Bike meet up group">Bike meet up Group</td>
               <td>Not Availaible</td>
             </tr>
             <tr>
-              <td>Camping</td>
-              <td>Youth Camp</td>
-              <td>Rent a Tent</td>
-              <td>Campground Adventure</td>
-              <td>Sunset Camping</td>
+              <td class="table-cell" data-content="Camping">Camping</td>
+              <td class="table-cell" data-content="Youth Camp">Youth Camp</td>
+              <td class="table-cell" data-content="Rent a Tent">Rent a Tent</td>
+              <td class="table-cell" data-content="Campground Adventures">Campground Adventure</td>
+              <td class="table-cell" data-content="Sunset Camping">Sunset Camping</td>
             </tr>
           </tbody>
         </table>
+      </div>
+      <!-- Modal -->
+  <div class="modal fade" id="cellModal" tabindex="-1" role="dialog" aria-labelledby="cellModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="cellModalLabel">Cell Interaction</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <!-- Content from the clicked cell  -->
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
         <section>
           
           <div class="container" >
@@ -214,6 +245,15 @@
       </footer>
     </div>
     <script src="js/site_scripts.js"></script>
+    <script>
+      $(document).ready(function () {
+        $('.table-cell').on('click', function () {
+          const content = $(this).data('content');
+          $('.modal-body').html(content);
+          $('#cellModal').modal('show');
+        });
+      });
+    </script>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
