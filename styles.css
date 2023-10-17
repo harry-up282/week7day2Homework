@@ -11,6 +11,13 @@
   background-position: center;
   height: 300px;
 }
+#cliff header {
+  background:  no-repeat lightgrey url(images/cliff_rock.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  height: 300px;
+}
 #contact header {
   background-image: url("images/runfly.jpg");
   background-repeat: no-repeat;
